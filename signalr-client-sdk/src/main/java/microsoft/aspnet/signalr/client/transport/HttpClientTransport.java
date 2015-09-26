@@ -36,7 +36,7 @@ public abstract class HttpClientTransport implements ClientTransport {
 
     /**
      * Initializes the HttpClientTransport with a logger
-     * 
+     *
      * @param logger
      *            logger to log actions
      */
@@ -62,6 +62,7 @@ public abstract class HttpClientTransport implements ClientTransport {
         Request get = new Request(Constants.HTTP_GET);
         get.setUrl(url);
         get.setVerb(Constants.HTTP_GET);
+        get.setHeaders(connection.getHeaders());
 
         connection.prepareRequest(get);
 
